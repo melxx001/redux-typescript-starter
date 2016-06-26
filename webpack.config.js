@@ -2,9 +2,11 @@
 // webpack config file to use ES6
 require('babel-register');
 
+const webpack = require('webpack');
 const path = require('path');
+const production = process.env.NODE_ENV === 'production';
 
-module.exports = {
+const config = {
   entry: './src/index.tsx',
   output: {
     filename: '[name].js',
@@ -13,7 +15,7 @@ module.exports = {
 
   // Enable source maps for debugging webpack's output.
   devtool: 'source-map',
-
+  debug: !production,
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
@@ -41,3 +43,14 @@ module.exports = {
     'react-dom': 'ReactDOM',
   },
 };
+
+if (production) {
+  config.plugins = [
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false,
+      test: /\.js$/,
+    }),
+  ];
+}
+
+module.exports = config;

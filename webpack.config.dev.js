@@ -3,7 +3,7 @@
 require('babel-register');
 
 const webpack = require('webpack');
-let config = require('./webpack.config');
+const config = require('./webpack.config');
 
 config.cache = true;
 config.debug = true;
