@@ -22,8 +22,8 @@ If you look at the package.json:
 
 Once `npm install` completes, then the `postinstall` will execute:
 
-- We will create the necessary typings (npm run typings)
-- run webpack (node_modules/.bin/webpack) to bundle into the folder `_build`.
+- We will create the necessary typings (`npm run typings`)
+- Run webpack (`node_modules/.bin/webpack`) to bundle into the folder `_build`.
 
 ## Modules Installed
 
