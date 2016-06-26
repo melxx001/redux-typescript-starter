@@ -4,7 +4,11 @@
   "description": "Universal React/Redux Starter Example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npm run lint:js && npm run lint:tsc",
+    "lint:js": "node_modules/.bin/eslint .",
+    "lint:tsc": "node_modules/.bin/tslint src/**/*.ts{,x}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typings": "node_modules/.bin/typings install"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,8 @@
     "react-dom": "^15.1.0"
   },
   "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-plugin-react": "^5.2.2",
     "file-loader": "^0.9.0",
     "react-transform-hmr": "^1.0.4",
     "source-map-loader": "^0.1.5",
