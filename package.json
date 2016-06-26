@@ -1,0 +1,30 @@
+{
+  "name": "universal-react-redux-starter",
+  "version": "0.0.1",
+  "description": "Universal React/Redux Starter Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melxx001/redux-starter.git"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "universal",
+    "isomorphic",
+    "starter",
+    "node",
+    "es6",
+    "es2015",
+    "typescript"
+  ],
+  "author": "Hicham El Hammouchi <hicham.elhammouchi@gmail.com> (http://www.hichamelhammouchi.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/melxx001/redux-starter/issues"
+  },
+  "homepage": "https://github.com/melxx001/redux-starter#readme"
+}
