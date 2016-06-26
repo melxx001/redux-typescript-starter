@@ -9,7 +9,7 @@ This branch has a basic example of React with Typescript bundled using Webpack.
 
 If you look at the package.json:
 
-`
+```
 "scripts": {
     "lint": "npm run lint:js && npm run lint:tsc",
     "lint:js": "node_modules/.bin/eslint .",
@@ -18,7 +18,7 @@ If you look at the package.json:
     "test": "echo \"Error: no test specified\" && exit 1",
     "typings": "node_modules/.bin/typings install"
   },
-`
+```
 
 Once `npm install` completes, then the `postinstall` will execute. We will create the necessary typings (npm run typings) and finally run webpack (node_modules/.bin/webpack) to bundle into the folder `_build`.
 
