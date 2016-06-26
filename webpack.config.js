@@ -7,10 +7,15 @@ const path = require('path');
 const production = process.env.NODE_ENV === 'production';
 
 const config = {
-  entry: './src/index.tsx',
+  entry: {
+    index: [
+      './src/index.tsx',
+    ],
+  },
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '_build'),
+    publicPath: 'assets',
   },
 
   // Enable source maps for debugging webpack's output.

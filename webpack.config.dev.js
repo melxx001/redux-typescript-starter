@@ -8,6 +8,7 @@ const config = require('./webpack.config');
 config.cache = true;
 config.debug = true;
 config.devtool = 'inline-source-map';
+config.entry.index.unshift('webpack-dev-server/client?http://localhost:8080/');
 
 config.plugins = [
   new webpack.HotModuleReplacementPlugin(),
