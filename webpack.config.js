@@ -1,15 +1,23 @@
+// Used for on-the-fly transpilation. This is only needed in the
+// webpack config file to use ES6
+require('babel-register');
+
+const path = require('path');
+
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    filename: './_build/bundle.js',
+    filename: '[name].js',
+    path: path.join(__dirname, '_build'),
   },
 
-  // Enable sourcemaps for debugging webpack's output.
+  // Enable source maps for debugging webpack's output.
   devtool: 'source-map',
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
+    root: path.join(__dirname, 'src'),
   },
 
   module: {
@@ -19,7 +27,7 @@ module.exports = {
     ],
 
     preLoaders: [
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      // All output '.js' files will have any source maps re-processed by 'source-map-loader'.
       { test: /\.js$/, loader: 'source-map-loader' },
     ],
   },
