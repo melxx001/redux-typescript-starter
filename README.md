@@ -10,7 +10,7 @@ This branch has a basic example of React with Typescript bundled using Webpack.
 
 Run `npm install` to install all packages.
 
-Once `npm install` completes, then the `postinstall` will execute and create the necessary typings (`npm run typings`) and run webpack (`node_modules/.bin/webpack`) to bundle into the folder `_build`.
+Once `npm install` completes, the `postinstall` will execute and create the necessary typings (`npm run typings`) and run webpack (`node_modules/.bin/webpack`) to bundle into the folder `_build`.
 
 # Run the project
 
