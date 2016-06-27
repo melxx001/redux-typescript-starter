@@ -14,7 +14,7 @@ Once `npm install` completes, the `postinstall` will execute and create the nece
 
 # Run the project
 
-Run `npm run dev' and browse to http://localhost:8080/
+Run `npm run dev` and browse to http://localhost:8080/
 
 ## Testing
 
