@@ -4,4 +4,4 @@ node_modules
 .idea
 typings
 _build
-
+_tsc
