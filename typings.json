@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "node": "registry:env/node#6.0.0+20160622202520",
     "react": "registry:dt/react#0.14.0+20160621225615",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   },
