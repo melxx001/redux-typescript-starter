@@ -2,7 +2,7 @@
 
 ## Status
 
-[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=master)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=master)](https://coveralls.io/github/melxx001/redux-starter?branch=master)
+[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=3-add-testing-coverage)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=3-add-testing-coverage)](https://coveralls.io/github/melxx001/redux-starter?branch=3-add-testing-coverage)
 
 This branch has a basic example of adding tests and coverage to the project.
 
