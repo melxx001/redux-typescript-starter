@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^5.2.2",
     "file-loader": "^0.9.0",
     "istanbul": "^0.4.4",
-    "react-addons-test-utils": "^15.1.0",
+    "react-addons-test-utils": "^15.3.0",
     "source-map-loader": "^0.1.5",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
