@@ -4,7 +4,9 @@
 
 [![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=master)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=master)](https://coveralls.io/github/melxx001/redux-starter?branch=master)
 
-This branch has a basic example of React with Typescript bundled using Webpack.
+This branch has a basic example of adding tests and coverage to the project.
+
+You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#adding-testing-and-coverage
 
 ## Installation
 
@@ -33,5 +35,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 - React
 - TypeScript
 - Webpack
+- Tape
+- Istanbul
 
 
