@@ -1,11 +1,11 @@
 {
   "globalDependencies": {
-    "node": "registry:env/node#6.0.0+20160622202520",
-    "react": "registry:dt/react#0.14.0+20160621225615",
+    "node": "registry:env/node#6.0.0+20160723033700",
+    "react": "registry:dt/react#0.14.0+20160805125551",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
   },
   "devDependencies": {
-    "tape": "registry:npm/tape#4.0.0+20160622192935"
+    "tape": "registry:npm/tape#4.0.0+20160723033700"
   }
 }
