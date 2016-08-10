@@ -3,6 +3,8 @@
 
 This branch has a basic example of React with Typescript bundled using Webpack.
 
+You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#adding-react-typescript-linting-and-webpack
+
 ## Run the project
 
 `npm install` and open index.html
