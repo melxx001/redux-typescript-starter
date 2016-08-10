@@ -4,9 +4,9 @@
   "description": "Universal React/Redux Starter Example",
   "main": "index.js",
   "scripts": {
-    "build": "npm run typings && node_modules/.bin/webpack",
+    "build": "node_modules/.bin/webpack",
     "clean": "rm -Rf _build",
-    "compile": "tsc",
+    "compile": "node_modules/.bin/tsc",
     "cover": "npm run compile && node_modules/.bin/istanbul test node_modules/.bin/tape ./_tsc/**/*.test.js -x **/*.test.js | tap-spec",
     "coverage": "npm run cover --coverage",
     "dev": "node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
@@ -39,13 +39,11 @@
   },
   "homepage": "https://github.com/melxx001/redux-starter#readme",
   "dependencies": {
-    "cross-env": "^1.0.8",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",
-    "concurrently": "^2.1.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^5.2.2",
