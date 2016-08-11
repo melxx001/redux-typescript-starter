@@ -40,7 +40,8 @@
   "homepage": "https://github.com/melxx001/redux-starter#readme",
   "dependencies": {
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-router": "^2.6.1"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",

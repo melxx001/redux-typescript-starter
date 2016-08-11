@@ -30,13 +30,15 @@ Run `npm run dev` and browse to http://localhost:8080/
 
 `npm run lint`
 
-## Modules Installed
+## Msin Modules Installed
 
 - React
+- React Router
 - TypeScript
-- Webpack
+- Webpack, Webpack Dev Server
 - Tape
 - Istanbul
+- TSlint, ESlint
 
 
 
