@@ -1,9 +1,12 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import Routes from './routes';
 
-import { Hello } from './components/Hello';
-
-ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React" />,
-  document.getElementById('example')
+const component = (
+  <Router history={browserHistory}>
+    {Routes}
+  </Router>
 );
+
+render(component, document.getElementById('example'));
