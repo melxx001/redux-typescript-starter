@@ -7,5 +7,8 @@
   },
   "devDependencies": {
     "tape": "registry:npm/tape#4.0.0+20160723033700"
+  },
+  "dependencies": {
+    "react-router": "registry:npm/react-router#2.4.0+20160811060709"
   }
 }
