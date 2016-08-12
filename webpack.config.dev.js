@@ -20,7 +20,6 @@ config.plugins = [
 config.devServer = {
   hot: true,
   inline: true,
-  historyApiFallback: true,
 };
 
 module.exports = config;
