@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-export default function Layout(props: React.Props<any>) {
+export function Layout(props: React.Props<any>) {
   return (
     <div>
       <ul>
@@ -10,6 +10,9 @@ export default function Layout(props: React.Props<any>) {
         </li>
         <li>
           <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/hello">Hello</Link>
         </li>
       </ul>
       <div>
