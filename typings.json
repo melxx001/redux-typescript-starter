@@ -12,6 +12,7 @@
     "react-router": "registry:npm/react-router#2.4.0+20160811060709"
   },
   "globalDevDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
     "jsdom": "registry:dt/jsdom#2.0.0+20160316155526"
   }
 }
