@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack",
-    "clean": "rm -Rf _build",
     "compile": "node_modules/.bin/tsc",
     "cover": "node_modules/.bin/ts-node node_modules/.bin/istanbul cover -e .ts -e .tsx -x '*.test.ts*' node_modules/.bin/tape ./**/*.test.ts* | tap-spec",
-    "coverage": "npm run cover --coverage",
     "dev": "node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
     "lint": "npm run lint:js && npm run lint:tsc",
     "lint:js": "node_modules/.bin/eslint .",
