@@ -4,7 +4,7 @@ import { createRenderer } from 'react-addons-test-utils';
 
 import { Hello } from './Hello';
 
-test('test', (t: test.Test) : void => {
+test('Test', (t: test.Test) : void => {
   t.equal(typeof Hello, 'function', 'Check if Hello is a function');
 
   const compiler = 'TypeScript';
