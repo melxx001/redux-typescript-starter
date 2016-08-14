@@ -2,11 +2,11 @@
 
 ## Status
 
-[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=4-add-routing)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=4-add-routing)](https://coveralls.io/github/melxx001/redux-starter?branch=4-add-routing)
+[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=5-add-redux)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=5-add-redux)](https://coveralls.io/github/melxx001/redux-starter?branch=5-add-redux)
 
 This branch has a basic example of adding initial routing to the project.
 
-You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#add-routing
+You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#add-redux
 
 ## Installation
 
@@ -33,6 +33,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 ## Msin Modules Installed
 
 - React
+- Redux, react-router-redux, redux-thunk
 - React Router
 - TypeScript
 - Webpack, Webpack Dev Server
