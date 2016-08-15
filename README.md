@@ -1,4 +1,4 @@
-# Basic React, Typescript & Webpack
+# Basic React, Redux, Typescript & Webpack
 
 ## Status
 
