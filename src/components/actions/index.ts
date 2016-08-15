@@ -1,7 +1,7 @@
 export const DECREMENT = 'DECREMENT';
 export const INCREMENT = 'INCREMENT';
 
-interface Actions {
+export interface Actions {
   type: string;
 }
 
