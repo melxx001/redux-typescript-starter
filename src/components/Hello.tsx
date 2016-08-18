@@ -7,6 +7,12 @@ export interface HelloProps {
 
 export class Hello extends React.Component<HelloProps, {}> {
   render() {
-    return <h1>This page uses {this.props.compiler} and {this.props.framework}!</h1>;
+    return (
+      <div>
+        <h1>This page uses {this.props.compiler} and {this.props.framework}!</h1>
+      </div>
+    );
   }
 }
+
+
