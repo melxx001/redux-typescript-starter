@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Counter} from '../components/counter';
+import {Counter} from '../components/Counter';
 export class Home extends React.Component<any, any> {
   render() {
     return (
