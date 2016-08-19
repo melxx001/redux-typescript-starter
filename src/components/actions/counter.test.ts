@@ -1,7 +1,7 @@
 import * as test from 'tape';
 import * as counter from './counter';
 
-test('Actions Test', (t: test.Test) : void => {
+test('Counter Actions Test', (t: test.Test) : void => {
   const increment = counter.increment();
   const decrement = counter.decrement();
 
