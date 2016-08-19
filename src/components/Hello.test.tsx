@@ -4,7 +4,7 @@ import { createRenderer } from 'react-addons-test-utils';
 
 import { Hello } from './Hello';
 
-test('Test', (t: test.Test) : void => {
+test('Hello Test', (t: test.Test) : void => {
   t.equal(typeof Hello, 'function', 'Check if Hello is a function');
 
   const compiler = 'TypeScript';
@@ -16,7 +16,7 @@ test('Test', (t: test.Test) : void => {
   const renderer = createRenderer();
   renderer.render(<Hello compiler={compiler} framework={framework} />);
   const result = renderer.getRenderOutput();
-  t.equal(result.type, 'h1', 'Check Hello returns h1');
+  t.equal(result.type, 'div', 'Check Hello returns div');
 
   t.end();
 });
