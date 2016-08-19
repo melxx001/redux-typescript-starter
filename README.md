@@ -2,7 +2,7 @@
 
 ## Status
 
-[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=5-add-redux)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=5-add-redux)](https://coveralls.io/github/melxx001/redux-starter?branch=5-add-redux)
+[![Build Status](https://travis-ci.org/melxx001/redux-starter.svg?branch=6-make-universal)](https://travis-ci.org/melxx001/redux-starter) [![Coverage Status](https://coveralls.io/repos/github/melxx001/redux-starter/badge.svg?branch=6-make-universal)](https://coveralls.io/github/melxx001/redux-starter?branch=6-make-universal)
 
 This branch has a basic example of adding initial routing to the project.
 
@@ -30,7 +30,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 
 `npm run lint`
 
-## Msin Modules Installed
+## Main Modules Installed
 
 - React
 - Redux, react-router-redux, redux-thunk
