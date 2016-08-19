@@ -3,12 +3,13 @@ import {applyMiddleware, createStore} from 'redux';
 import reducer from './reducer';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-declare var module: { hot: any };
+declare const module: { hot: any };
 
-export default function configureStore(initialState: any = { counterReducer: 0 }) {
+export default function configureStore(initialState: any = { counterReducer: 0 }, mod: any = module) {
   const store = createStoreWithMiddleware(reducer, initialState);
-  if (module.hot) {
-    module.hot.accept('./reducer', () => {
+
+  if (mod.hot && typeof mod.hot.accept === 'function') {
+    mod.hot.accept('./reducer', () => {
       const nextReducer = reducer;
       store.replaceReducer(nextReducer);
     });
