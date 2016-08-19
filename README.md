@@ -30,7 +30,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 
 `npm run lint`
 
-## Msin Modules Installed
+## Main Modules Installed
 
 - React
 - Redux, react-router-redux, redux-thunk
