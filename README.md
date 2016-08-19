@@ -24,7 +24,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 
 ## Coverage
 
-`npm run coverage`
+`npm run cover`
 
 ## Linting
 
