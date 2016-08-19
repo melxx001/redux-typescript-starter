@@ -4,3 +4,4 @@ typings
 .idea
 .git
 _build
+_tsc
