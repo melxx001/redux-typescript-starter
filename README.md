@@ -35,6 +35,7 @@ Run `npm run dev` and browse to http://localhost:8080/
 - React
 - Redux, react-router-redux, redux-thunk
 - React Router
+- Express
 - TypeScript
 - Webpack, Webpack Dev Server
 - Tape
