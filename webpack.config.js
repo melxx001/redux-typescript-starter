@@ -17,16 +17,36 @@ const config = {
     path: path.join(__dirname, '_build'),
     publicPath: 'assets',
   },
-
-  // Enable source maps for debugging webpack's output.
-  devtool: 'source-map',
   debug: !production,
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
     root: path.join(__dirname, 'src'),
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      __CLIENT__: true,
+      __SERVER__: false,
+      __PRODUCTION__: true,
+      __DEV__: false,
+    }),
 
+    // NOTE: https://github.com/gaearon/babel-plugin-react-transform#configuration
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: 'production',
+      }
+    }),
+
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ],
   module: {
     loaders: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
@@ -43,19 +63,10 @@ const config = {
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-  },
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM',
+  // },
 };
-
-if (production) {
-  config.plugins = [
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      test: /\.js$/,
-    }),
-  ];
-}
 
 module.exports = config;
