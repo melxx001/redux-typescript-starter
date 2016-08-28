@@ -4,7 +4,7 @@
   "description": "Universal React/Redux Starter Example",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack",
+    "build": "npm run build-client && npm run build-server",
     "cover": "node_modules/.bin/ts-node node_modules/.bin/istanbul cover -e .ts -e .tsx -x '*.test.ts{,x}' node_modules/.bin/tape './**/*.test.ts{,x}' | node_modules/.bin/tap-spec",
     "dev": "node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
     "lint": "npm run lint:js && npm run lint:tsc",
@@ -12,6 +12,12 @@
     "lint:tsc": "node_modules/.bin/tslint 'src/**/*.ts{,x}'",
     "postinstall": "npm run typings && npm run build",
     "test": "node_modules/.bin/ts-node node_modules/.bin/tape './**/*.test.ts{,x}' | node_modules/.bin/tap-spec",
+    "start": "node ./node_modules/.bin/concurrently --kill-others \"npm run watch-server\" \"npm run watch-client\" \"npm run start-server\"",
+    "build-client": "node_modules/.bin/webpack --config webpack.config.dev.js",
+    "build-server": "node_modules/.bin/webpack --config webpack.config.server.dev.js",
+    "start-server": "node _server",
+    "watch-client": "node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
+    "watch-server": "node_modules/.bin/webpack --colors --config webpack.config.server.dev.js",
     "typings": "node_modules/.bin/typings install"
   },
   "repository": {
@@ -36,6 +42,7 @@
   },
   "homepage": "https://github.com/melxx001/redux-starter#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "history": "2.1.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
@@ -47,6 +54,7 @@
   },
   "devDependencies": {
     "babel-register": "^6.9.0",
+    "concurrently": "^2.2.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^5.2.2",
