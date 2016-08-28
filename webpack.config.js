@@ -35,7 +35,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: 'production',
-      }
+      },
     }),
 
     new webpack.optimize.DedupePlugin(),
@@ -43,9 +43,9 @@ const config = {
 
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
-      }
-    })
+        warnings: false,
+      },
+    }),
   ],
   module: {
     loaders: [
