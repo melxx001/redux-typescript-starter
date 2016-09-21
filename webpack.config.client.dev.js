@@ -3,7 +3,7 @@
 require('babel-register');
 
 const webpack = require('webpack');
-const config = require('./webpack.config');
+const config = require('./webpack.config.client');
 
 const hostname = 'localhost';
 const port = '3000';
@@ -28,7 +28,13 @@ config.plugins = [
   }),
 
   new webpack.HotModuleReplacementPlugin(),
-  // new webpack.NoErrorsPlugin(),
+  new webpack.NoErrorsPlugin(),
+
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('development'),
+    },
+  }),
 ];
 
 config.devServer = {
