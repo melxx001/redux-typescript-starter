@@ -1,6 +1,4 @@
 import * as express from 'express';
-import * as fs from 'fs';
-import * as http from 'http';
 import * as React from 'react';
 
 import {match, RouterContext} from 'react-router';
@@ -61,7 +59,6 @@ app.use(function (req: any, res: any) {
 
 declare const module: { hot: any };
 
-// SEE: http://stackoverflow.com/questions/12871565/how-to-create-pem-files-for-https-web-server/12907165#12907165
 app.listen(port, function (error: any) {
     if (error) {
       console.error(error);
