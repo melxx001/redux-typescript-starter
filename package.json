@@ -9,7 +9,7 @@
     "lint": "npm run lint:js && npm run lint:tsc",
     "lint:js": "node_modules/.bin/eslint .",
     "lint:tsc": "node_modules/.bin/tslint 'src/**/*.ts{,x}'",
-    "postinstall": "npm run typings && npm run build",
+    "postinstall": "npm run typings",
     "test": "node_modules/.bin/ts-node node_modules/.bin/tape './**/*.test.ts{,x}' | node_modules/.bin/tap-spec",
     "dev": "node ./node_modules/.bin/concurrently --kill-others \"npm run watch-server\" \"npm run watch-client\" \"npm run dev-server\"",
     "build-client": "node_modules/.bin/webpack --config webpack.config.dev.js",
