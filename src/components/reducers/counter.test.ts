@@ -2,7 +2,7 @@ import * as test from 'tape';
 import {increment, decrement} from '../actions/counter';
 import {counterReducer} from './counter';
 
-test('Reducers Test', (t: test.Test) : void => {
+test('Counter Reducer Test', (t: test.Test) : void => {
   t.equal(counterReducer(0, increment()), 1, 'Test increment');
   t.equal(counterReducer(1, decrement()), 0, 'Test decrement');
   t.equal(counterReducer(null, increment()), 1, 'Test null state');
