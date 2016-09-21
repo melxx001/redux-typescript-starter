@@ -12,7 +12,7 @@ You can find more information at http://www.hichamelhammouchi.com/development/20
 
 Run `npm install` to install all packages.
 
-Once `npm install` completes, the `postinstall` will execute and create the necessary typings (`npm run typings`) and run webpack (`node_modules/.bin/webpack`) to bundle into the folder `_build`.
+Once `npm install` completes, the `postinstall` will execute and create the necessary typings (`npm run typings`).
 
 # Run the project
 

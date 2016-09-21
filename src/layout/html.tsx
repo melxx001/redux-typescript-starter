@@ -19,9 +19,6 @@ export function Html(props: any) {
       <title>Add Universal</title>
       <meta name ="description" content ="Get started with React, React Router, Redux, and Universal." />
       <meta name ="viewport" content ="width=device-width, initial-scale=1" />
-
-      <link rel ="apple-touch-icon" href ="apple-touch-icon.png" />
-      <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
     </head>
 
     <body>
@@ -31,7 +28,8 @@ export function Html(props: any) {
       <script src={script} />
     </body>
     </html>
-);
+
+  );
 }
 
 export default Html;

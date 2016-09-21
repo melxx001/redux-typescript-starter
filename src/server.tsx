@@ -25,15 +25,15 @@ function getMarkup(store: any, render_props: any) {
     <Provider store = {store} key = "provider">
       <RouterContext {...render_props} />
     </Provider>
-);
+  );
 
   return '<!doctype html>' + renderToString(
       <Html
         component = {component}
         script = {`${uri}/client/index.js`}
         state = {store.getState()}
-/>
-);
+      />
+    );
 }
 
 app.use(function (req: any, res: any) {
@@ -60,12 +60,12 @@ app.use(function (req: any, res: any) {
 declare const module: { hot: any };
 
 app.listen(port, function (error: any) {
-    if (error) {
-      console.error(error);
-    } else {
-      console.info(`==> 🌎  Open up http://${hostname}:${port}/ in your browser.`);
-    }
-  });
+  if (error) {
+    console.error(error);
+  } else {
+    console.info(`==> Open up http://${hostname}:${port}/ in your browser.`);
+  }
+});
 
 if (module.hot) {
   console.info('[HMR] Server is listening…');

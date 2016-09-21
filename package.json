@@ -4,7 +4,6 @@
   "description": "Universal React/Redux Starter Example",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack",
     "cover": "node_modules/.bin/ts-node node_modules/.bin/istanbul cover -e .ts -e .tsx -x '*.test.ts{,x}' node_modules/.bin/tape './**/*.test.ts{,x}' | node_modules/.bin/tap-spec",
     "lint": "npm run lint:js && npm run lint:tsc",
     "lint:js": "node_modules/.bin/eslint .",
@@ -42,7 +41,6 @@
   "homepage": "https://github.com/melxx001/redux-starter#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "history": "2.1.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
@@ -61,7 +59,6 @@
     "istanbul": "1.1.0-alpha.1",
     "jsdom": "^9.4.2",
     "jsdom-global": "^2.0.0",
-    "just-wait": "^1.0.5",
     "react-addons-test-utils": "^15.3.0",
     "source-map-loader": "^0.1.5",
     "tap-spec": "^4.1.1",
@@ -71,6 +68,7 @@
     "tslint": "^3.12.1",
     "typescript": "^1.8.10",
     "typings": "^1.3.0",
+    "wait-run": "^1.2.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
