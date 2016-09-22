@@ -1,12 +1,12 @@
 import {ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO} from '../actions/todo';
 
-export interface State extends Object {
+export interface TodoState extends Object {
   id?: number;
   text?: string;
   completed?: Boolean;
 }
 
-export const todo = (state: State = {}, action: any = { type: '' }) : State => {
+export const todo = (state: TodoState = {}, action: any = { type: '' }) : TodoState => {
   switch (action.type) {
     case ADD_TODO:
       return {
@@ -27,7 +27,7 @@ export const todo = (state: State = {}, action: any = { type: '' }) : State => {
   }
 };
 
-export const todoReducer = (state: Array<any> = [], action: any = { type: '' }) : Array<any> => {
+export const todoReducer = (state: Array<TodoState> = [], action: any = { type: '' }) : Array<any> => {
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -35,7 +35,7 @@ export const todoReducer = (state: Array<any> = [], action: any = { type: '' }) 
         todo(undefined, action)
       ];
     case TOGGLE_TODO:
-      return state.map((t: any) : any => todo(t, action));
+      return state.map((t: TodoState) : TodoState => todo(t, action));
     default:
       return state;
   }
@@ -48,4 +48,4 @@ export const visibilityFilterReducer = (state: string = 'SHOW_ALL', action: any 
     default:
       return state;
   }
-}
+};
