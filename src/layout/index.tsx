@@ -14,6 +14,9 @@ export function Layout(props: React.Props<any>) {
         <li>
           <Link to="/hello">Hello</Link>
         </li>
+        <li>
+          <Link to="/todo">Todo</Link>
+        </li>
       </ul>
       <div>
         {props.children}
