@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "enzyme": "registry:dt/enzyme#2.4.1+20160919072335",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
     "node": "registry:env/node#6.0.0+20160723033700",
     "react": "registry:dt/react#0.14.0+20160805125551",
