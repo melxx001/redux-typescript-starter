@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as React from 'react';
+import * as path from 'path';
 
 import {match, RouterContext} from 'react-router';
 import {Provider} from 'react-redux';
@@ -17,9 +18,10 @@ const hostname = 'localhost';
 const port = 8080;
 const sitePort = 3000;
 
+declare var __PRODUCTION__: Boolean; // Populated by webpack
+
 function getMarkup(store: any, render_props: any) {
-  // const uri = __PRODUCTION__ ? '' : 'https://localhost:3000';
-  const uri = `http://${hostname}:${sitePort}`;
+  const uri = __PRODUCTION__ ? 'assets' : `http://${hostname}:${sitePort}/client`;
 
   const component = (
     <Provider store = {store} key = "provider">
@@ -27,13 +29,16 @@ function getMarkup(store: any, render_props: any) {
     </Provider>
   );
 
-  return '<!doctype html>' + renderToString(
+  return '' + renderToString(
       <Html
         component = {component}
-        script = {`${uri}/client/index.js`}
+        script = {`${uri}/index.js`}
         state = {store.getState()}
       />
     );
+}
+if (__PRODUCTION__) {
+  app.use('/assets', express.static(path.join('_build')));
 }
 
 app.use(function (req: any, res: any) {
