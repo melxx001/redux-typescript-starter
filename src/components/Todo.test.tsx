@@ -3,16 +3,14 @@ import * as test from 'tape';
 import { createRenderer, Simulate } from 'react-addons-test-utils';
 import { Provider } from 'react-redux';
 import configureStore from '../store';
-import * as Actions from './actions/todo';
 import {mount} from 'enzyme';
 
 import {
   LinkComponent, Todo, TodoList, Footer, AddTodoComponent,
-  AddTodo, getVisibleTodos, VisibleTodoList, FilterLink,
+  AddTodo, VisibleTodoList,
+  filterLinkMapDispatchToProps, getVisibleTodos,
   ToDoApp
 } from './Todo';
-
-require('jsdom-global')(); // Used to make available the DOM element document
 
 test('Todo Presentation Tests', (t: test.Test) : void => {
   let onClick = () => {};
@@ -69,9 +67,10 @@ test('Todo Presentation Tests', (t: test.Test) : void => {
   t.end();
 });
 
-test.only('Todo Container Tests', (t: test.Test) : void => {
+test('Todo Container Tests', (t: test.Test) : void => {
   const store = configureStore();
 
+  // AddTodo container tests
   const addTodoWrapper = mount(
     <Provider store={store} key="provider">
       <AddTodo />
@@ -81,6 +80,32 @@ test.only('Todo Container Tests', (t: test.Test) : void => {
   const addTodoComponent: any = addTodo.find(AddTodoComponent);
   t.equal(addTodoComponent.text(), addTodo.text(), 'Check AddTodo text');
 
+  // FilterLink filterLinkMapDispatchToProps function tests
+  const filterlink = filterLinkMapDispatchToProps(() => { return 'dispatch'; }, 'SHOW_ALL');
+  t.true(filterlink.hasOwnProperty('onClick'), 'Check if filterLink\'s MapDispatchToProps returns onClick');
+  t.equal(filterlink.onClick(), 'dispatch', 'Check filterLink\'s MapDispatchToProps function');
+
+  // getVisibleTodos helper function tests
+  const todosArray = [
+    { text: 'item1', completed: true },
+    { text: 'item2', completed: false },
+    { text: 'item3', completed: true },
+  ];
+  const showAll = getVisibleTodos(todosArray, 'SHOW_ALL');
+  const showCompleted = getVisibleTodos(todosArray, 'SHOW_COMPLETED');
+  const showActive = getVisibleTodos(todosArray, 'SHOW_ACTIVE');
+
+  t.deepEqual(getVisibleTodos(todosArray), showAll, 'Check getVisibleTodos default filter');
+  t.equal(showAll.length, 3, 'Check getVisibleTodos SHOW_ALL filter 1');
+  t.equal(showAll[2].text, 'item3', 'Check getVisibleTodos SHOW_ALL filter 2');
+
+  t.equal(showCompleted.length, 2, 'Check getVisibleTodos SHOW_COMPLETED filter 1');
+  t.equal(showCompleted[1].text, 'item3', 'Check getVisibleTodos SHOW_COMPLETED filter 2');
+
+  t.equal(showActive.length, 1, 'Check getVisibleTodos SHOW_ACTIVE filter 1');
+  t.equal(showActive[0].text, 'item2', 'Check getVisibleTodos SHOW_ACTIVE filter 2');
+
+  // VisibleTodoList container tests
   const visibleTodoListWrapper = mount(
     <Provider store={store} key="provider">
       <VisibleTodoList />
@@ -90,11 +115,14 @@ test.only('Todo Container Tests', (t: test.Test) : void => {
   const todoList: any = visibleTodoList.find(TodoList);
   t.equal(visibleTodoList.text(), todoList.text(), 'Check visibleTodoList text');
 
-  const toDoAppWrapper = mount(
+
+  // Full app unit tests
+  const provider =
     <Provider store={store} key="provider">
       <ToDoApp />
-    </Provider>
-  );
+    </Provider>;
+
+  const toDoAppWrapper = mount(provider);
   const toDoApp: any = toDoAppWrapper.find(ToDoApp);
   const input = toDoApp.find('input').get(0);
   const form = toDoApp.find('form');
@@ -102,6 +130,9 @@ test.only('Todo Container Tests', (t: test.Test) : void => {
   t.equal(list.length, 0 , 'Check empty number of to do items');
 
   // Add items
+  input.value = '';
+  form.simulate('submit');
+
   input.value = 'item 1';
   form.simulate('submit');
 
@@ -125,16 +156,6 @@ test.only('Todo Container Tests', (t: test.Test) : void => {
     -1,
     'Check if clicked item has text decoration'
   );
-
-  const footer: any = toDoAppWrapper.find(LinkComponent);
-  let all: any = footer.find({filter: 'SHOW_ALL'});
-  let active: any = footer.find({filter: 'SHOW_COMPLETED'});
-  let completed: any = footer.find({filter: 'SHOW_COMPLETED'});
-
-  // Simulate.click(all);
-  // console.log(list.get(1));
-
-  console.log(footer.get(0).props);
 
   t.end();
 });

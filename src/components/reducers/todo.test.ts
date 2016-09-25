@@ -45,16 +45,22 @@ test('Todo Reducer Test', (t: test.Test) : void => {
     'Test default todoReducer 2'
   );
 
-  t.deepEqual(
-    visibilityFilterReducer(null, setVisibilityFilter('SHOW')),
+  t.equal(
+    visibilityFilterReducer(undefined, setVisibilityFilter('SHOW')),
     'SHOW',
     'Test visibilityFilter 1'
   );
 
-  t.deepEqual(
+  t.equal(
     visibilityFilterReducer(),
     'SHOW_ALL',
     'Test visibilityFilter 2'
+  );
+
+  t.equal(
+    visibilityFilterReducer(undefined, setVisibilityFilter('')),
+    'SHOW_ALL',
+    'Test visibilityFilter 3'
   );
 
   t.end();

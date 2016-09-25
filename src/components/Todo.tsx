@@ -14,7 +14,7 @@ export interface LinkProps extends Object {
 export class LinkComponent extends React.Component<LinkProps, any> {
   static propTypes = {
     active: React.PropTypes.bool.isRequired,
-    children: React.PropTypes.node.isRequired,
+    children: React.PropTypes.node,
     onClick: React.PropTypes.func.isRequired,
   };
 
@@ -119,7 +119,7 @@ export class AddTodoComponent extends React.Component<AddTodoProps, any> {
     let input: HTMLInputElement;
     return (
       <div>
-        <form ref="todo_form" onSubmit={(e: Event) => {
+        <form onSubmit={(e: Event) => {
           e.preventDefault();
           if (!input.value.trim()) {
             return;
@@ -128,7 +128,7 @@ export class AddTodoComponent extends React.Component<AddTodoProps, any> {
           input.value = '';
         }}>
           <input ref={(node: HTMLInputElement) => {input = node;}} />
-          <button ref="todo_form_submit" type="submit">Add Todo</button>
+          <button type="submit">Add Todo</button>
         </form>
       </div>
     );
@@ -137,23 +137,27 @@ export class AddTodoComponent extends React.Component<AddTodoProps, any> {
 export const AddTodo = connect()(AddTodoComponent as any);
 
 // Setup the container component to update the links based on a filter
+export const filterLinkMapStateToProps = (state: ReducerState, ownProps: any) => {
+  return {
+    active: ownProps.filter === state.visibilityFilterReducer
+  };
+};
+
+export const filterLinkMapDispatchToProps = (dispatch: Function, ownProps: any) => {
+  return {
+    onClick: () => {
+      return dispatch(setVisibilityFilter(ownProps.filter));
+    },
+  };
+};
+
 export const FilterLink = connect(
-  (state: ReducerState, ownProps: any) => {
-    return {
-      active: ownProps.filter === state.visibilityFilterReducer
-    };
-  },
-  (dispatch: Function, ownProps: any) => {
-    return {
-      onClick: () => {
-        dispatch(setVisibilityFilter(ownProps.filter));
-      },
-    };
-  }
+  filterLinkMapStateToProps,
+  filterLinkMapDispatchToProps
 )(LinkComponent as any);
 
 // Setup the container component to decide what items to show based on what was link was clicked
-export const getVisibleTodos = (todos: any , filter: any) => {
+export const getVisibleTodos = (todos: any , filter: string = '') => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos;
@@ -161,6 +165,8 @@ export const getVisibleTodos = (todos: any , filter: any) => {
       return todos.filter((t: any) : Boolean => t.completed);
     case 'SHOW_ACTIVE':
       return todos.filter((t: any) : Boolean => !t.completed);
+    default:
+      return todos;
   }
 };
 

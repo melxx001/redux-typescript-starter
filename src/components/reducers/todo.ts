@@ -41,10 +41,11 @@ export const todoReducer = (state: Array<TodoState> = [], action: any = { type: 
   }
 };
 
-export const visibilityFilterReducer = (state: string = 'SHOW_ALL', action: any = { type: '' }) : string => {
+export const visibilityFilterReducer = (state: string = 'SHOW_ALL',
+                                        action: any = { type: '', filter : '' }) : string => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return action.filter;
+      return action.filter ? action.filter : state;
     default:
       return state;
   }
