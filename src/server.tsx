@@ -29,7 +29,7 @@ function getMarkup(store: any, render_props: any) {
     </Provider>
   );
 
-  return '' + renderToString(
+  return '<!DOCTYPE html>' + renderToString(
       <Html
         component = {component}
         script = {`${uri}/index.js`}
@@ -38,7 +38,7 @@ function getMarkup(store: any, render_props: any) {
     );
 }
 if (__PRODUCTION__) {
-  app.use('/assets', express.static(path.join('_build')));
+  app.use('/assets', express.static(path.join('_client')));
 }
 
 app.use(function (req: any, res: any) {

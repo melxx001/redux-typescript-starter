@@ -15,7 +15,7 @@ config.entry = {
 
 config.output = {
   filename: '[name].js',
-  path: path.join(__dirname, '_build'),
+  path: path.join(__dirname, '_client'),
   publicPath: 'assets',
 };
 
