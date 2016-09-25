@@ -26,9 +26,6 @@ config.plugins = [
     __SERVER__: true,
     __PRODUCTION__: true,
     __DEV__: false,
-  }),
-
-  new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('production'),
     },
@@ -38,9 +35,11 @@ config.plugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
 
   new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false,
-    },
+    compress: { warnings: false },
+    comments: false,
+    sourceMap: false,
+    mangle: true,
+    minimize: true,
   }),
 ];
 
