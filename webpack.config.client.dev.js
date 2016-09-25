@@ -25,16 +25,13 @@ config.plugins = [
     __SERVER__: false,
     __PRODUCTION__: false,
     __DEV__: true,
-  }),
-
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin(),
-
-  new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('development'),
     },
   }),
+
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin(),
 ];
 
 config.devServer = {

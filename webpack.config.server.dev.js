@@ -20,9 +20,6 @@ config.plugins = [
     __SERVER__: true,
     __PRODUCTION__: false,
     __DEV__: true,
-  }),
-
-  new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('development'),
     },
