@@ -3,7 +3,7 @@
   "buildOnSave": false,
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
@@ -15,7 +15,7 @@
   },
   "exclude": [
     "node_modules",
-    "_build",
+    "_client",
     "typings/index",
     "typings/index.d.ts"
   ]

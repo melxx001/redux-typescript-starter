@@ -2,31 +2,15 @@
 // webpack config file to use ES6
 require('babel-register');
 
-const webpack = require('webpack');
 const path = require('path');
-const production = process.env.NODE_ENV === 'production';
 
 const config = {
-  entry: {
-    index: [
-      './src/index.tsx',
-    ],
-  },
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, '_build'),
-    publicPath: 'assets',
-  },
-
-  // Enable source maps for debugging webpack's output.
-  devtool: 'source-map',
-  debug: !production,
+  debug: false,
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
     root: path.join(__dirname, 'src'),
   },
-
   module: {
     loaders: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
@@ -43,19 +27,10 @@ const config = {
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-  },
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM',
+  // },
 };
-
-if (production) {
-  config.plugins = [
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      test: /\.js$/,
-    }),
-  ];
-}
 
 module.exports = config;

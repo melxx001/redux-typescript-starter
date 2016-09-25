@@ -1,9 +1,17 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {render} from 'react-dom';
+import {Router, browserHistory} from 'react-router';
 
-import { Hello } from './components/Hello';
+import configureStore from './store';
+import Routes from './routes';
 
-ReactDOM.render(
-  <Hello compiler="TypeScript" framework="React" />,
-  document.getElementById('example')
+const store = configureStore();
+
+const Component = (
+  <Provider store={store} key="provider">
+    <Router history={browserHistory} routes={Routes} />
+  </Provider>
 );
+
+render(Component, document.getElementById('example'));
