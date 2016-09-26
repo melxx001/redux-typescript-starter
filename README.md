@@ -3,7 +3,7 @@
 
 This branch has a basic example of React with Typescript bundled using Webpack and reloaded with Webpack Dev Server.
 
-You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#adding-webpack-dev-server
+You can find more information at http://www.hichamelhammouchi.com/development/2016/09/25/universal-react-redux-typescript/#adding-webpack-dev-server
 
 ## Installation
 
