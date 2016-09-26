@@ -6,7 +6,7 @@
 
 This branch has a basic example of adding tests and coverage to the project.
 
-You can find more information at http://www.hichamelhammouchi.com/development/2016/06/26/universal-react-redux-typescript/#adding-testing-and-coverage
+You can find more information at http://www.hichamelhammouchi.com/development/2016/09/25/universal-react-redux-typescript/#adding-testing-and-coverage
 
 ## Installation
 
